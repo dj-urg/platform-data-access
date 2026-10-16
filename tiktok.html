@@ -55,27 +55,27 @@
     <dt>Who</dt><dd>Academics at institutions in the EEA, US, UK, Canada or Switzerland; academic and not-for-profit institutions in Brazil (online youth-safety research); EU not-for-profit research organisations (usually via the compute environment only). PhD candidates need a supervisor's endorsement letter.</dd>
     <dt>Cost</dt><dd>Free.</dd>
     <dt>Timeline</dt><dd>Officially up to 4 weeks; in practice often longer.</dd>
-    <dt>Apply at</dt><dd><a href="https://developers.tiktok.com/application/research-api">developers.tiktok.com/application/research-api</a></dd>
-    <dt>Docs</dt><dd><a href="https://developers.tiktok.com/products/research-api/">developers.tiktok.com/products/research-api</a></dd>
+    <dt>Apply at</dt><dd><a href="https://developers.tiktok.com/application/research-api" target="_blank" rel="noopener">developers.tiktok.com/application/research-api</a></dd>
+    <dt>Docs</dt><dd><a href="https://developers.tiktok.com/products/research-api/" target="_blank" rel="noopener">developers.tiktok.com/products/research-api</a></dd>
   </dl>
 </section>
 <section class="prose">
   <h2 id="data">What data you get</h2>
-  <p>Public videos (description, creation time, hashtags, music, view/like/comment/share counts), comments, user profiles (bio, follower counts), follower and following lists, liked/pinned/reposted videos, and EU TikTok Shop data. Full field list: <a href="https://developers.tiktok.com/doc/research-api-codebook">Research API codebook</a>. Note the freshness lags: new videos appear after up to 48 hours; statistics update within up to 10 days.</p>
+  <p>Public videos (description, creation time, hashtags, music, view/like/comment/share counts), comments, user profiles (bio, follower counts), follower and following lists, liked/pinned/reposted videos, and EU TikTok Shop data. Full field list: <a href="https://developers.tiktok.com/doc/research-api-codebook" target="_blank" rel="noopener">Research API codebook</a>. Note the freshness lags: new videos appear after up to 48 hours; statistics update within up to 10 days.</p>
 
   <h2 id="apply">How to apply</h2>
   <ol class="steps">
-    <li>Create a TikTok for Developers account with your institutional email: <a href="https://developers.tiktok.com/signup">developers.tiktok.com/signup</a>.</li>
+    <li>Create a TikTok for Developers account with your institutional email: <a href="https://developers.tiktok.com/signup" target="_blank" rel="noopener">developers.tiktok.com/signup</a>.</li>
     <li>Submit the research application (link above) with: institutional details, a clearly defined research proposal, funding disclosure, evidence of ethics review (ethics committee approval), a data security plan, and named collaborators. PhD candidates attach the advisor endorsement letter (template on the application page).</li>
     <li>Review takes up to ~4 weeks officially (longer in practice). On approval the principal researcher manages the organisation account and can add up to 9 collaborators (each reviewed individually; collaborators at other institutions need their own application).</li>
-    <li>Build against the <a href="https://developers.tiktok.com/doc/research-api-get-started">getting-started guide</a>; access tokens expire every 2 hours. Check the current Research API Terms — they include obligations to periodically refresh/delete stored data.</li>
+    <li>Build against the <a href="https://developers.tiktok.com/doc/research-api-get-started" target="_blank" rel="noopener">getting-started guide</a>; access tokens expire every 2 hours. Check the current Research API Terms — they include obligations to periodically refresh/delete stored data.</li>
   </ol>
 
   <h2 id="limits">Limits and caveats</h2>
   <ul>
     <li><strong>Quota (shared by your whole lab/organisation):</strong> 1,000 requests and 100,000 records per day; 100 records per request; follower/following endpoints have a separate 2M records/day allowance. Daily reset 00:00 UTC. TikTok states it grants no exceptions.</li>
     <li>Independent audits report substantial, unexplained gaps between what users see and what the API returns (e.g., an AI Forensics audit testing ~260,000 data-donated video URLs: <a href="references.html#entrena">Entrena-Serrano et al., 2025</a>; <a href="references.html#bekavac">Bekavac &amp; Mayer, 2026</a>). Treat completeness as an empirical question in your design.</li>
-    <li><strong>Separate ad transparency route:</strong> the <a href="https://developers.tiktok.com/products/commercial-content-api/">Commercial Content API</a> (EU ads and commercial content; open to researchers and the public worldwide; approval typically within ~2 working days) and the public <a href="https://library.tiktok.com">Commercial Content Library</a>.</li>
+    <li><strong>Separate ad transparency route:</strong> the <a href="https://developers.tiktok.com/products/commercial-content-api/" target="_blank" rel="noopener">Commercial Content API</a> (EU ads and commercial content; open to researchers and the public worldwide; approval typically within ~2 working days) and the public <a href="https://library.tiktok.com" target="_blank" rel="noopener">Commercial Content Library</a>.</li>
   </ul>
 </section>
 

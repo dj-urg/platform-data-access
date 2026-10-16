@@ -55,17 +55,17 @@
     <dt>Who</dt><dd>Anyone with a Telegram account; no application or review.</dd>
     <dt>Cost</dt><dd>Free.</dd>
     <dt>Timeline</dt><dd>Credentials in ~10 minutes, self-service.</dd>
-    <dt>Get credentials</dt><dd><a href="https://my.telegram.org">my.telegram.org</a></dd>
-    <dt>Docs</dt><dd><a href="https://core.telegram.org/api/obtaining_api_id">core.telegram.org/api/obtaining_api_id</a></dd>
+    <dt>Get credentials</dt><dd><a href="https://my.telegram.org" target="_blank" rel="noopener">my.telegram.org</a></dd>
+    <dt>Docs</dt><dd><a href="https://core.telegram.org/api/obtaining_api_id" target="_blank" rel="noopener">core.telegram.org/api/obtaining_api_id</a></dd>
   </dl>
 </section>
 <section class="prose">
   <h2 id="creds">Getting API credentials</h2>
   <ol class="steps">
     <li>Create a Telegram account with an official app. Many researchers use a dedicated research account/SIM to separate research from personal use; note that fresh accounts doing immediate bulk collection face elevated ban risk, and each phone number can hold only one API registration.</li>
-    <li>Log in at <a href="https://my.telegram.org">my.telegram.org</a> with that phone number (the login code arrives inside Telegram).</li>
+    <li>Log in at <a href="https://my.telegram.org" target="_blank" rel="noopener">my.telegram.org</a> with that phone number (the login code arrives inside Telegram).</li>
     <li>Open &ldquo;API development tools&rdquo;, fill in the short application form (app title, short name, platform), and receive your <code>api_id</code> and <code>api_hash</code>. Keep both secret — together with your login they grant full account access.</li>
-    <li>Use them from Python with <a href="https://docs.telethon.dev">Telethon</a> (actively maintained; the academic standard) — or let <strong>4CAT</strong> handle collection without coding (<a href="toolkit.html">see the toolkit</a>): its Telegram data source takes your api_id/api_hash and logs in as you. Avoid the unmaintained Pyrogram and Telepathy.</li>
+    <li>Use them from Python with <a href="https://docs.telethon.dev" target="_blank" rel="noopener">Telethon</a> (actively maintained; the academic standard) — or let <strong>4CAT</strong> handle collection without coding (<a href="toolkit.html">see the toolkit</a>): its Telegram data source takes your api_id/api_hash and logs in as you. Avoid the unmaintained Pyrogram and Telepathy.</li>
   </ol>
 
   <h2 id="rules">What researchers collect, and the rules</h2>
