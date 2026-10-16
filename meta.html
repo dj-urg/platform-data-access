@@ -3,15 +3,24 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Meta: Facebook & Instagram — Meta Content Library</title>
+<title>Meta: Facebook &amp; Instagram — Meta Content Library</title>
 <meta name="description" content="How researchers get access to the Meta Content Library (Facebook, Instagram, Threads, WhatsApp Channels) and the Ad Library API.">
+<link rel="canonical" href="https://dj-urg.github.io/platform-data-access/meta.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Platform Data Access">
+<meta property="og:title" content="Meta: Facebook &amp; Instagram — Meta Content Library">
+<meta property="og:description" content="How researchers get access to the Meta Content Library (Facebook, Instagram, Threads, WhatsApp Channels) and the Ad Library API.">
+<meta property="og:url" content="https://dj-urg.github.io/platform-data-access/meta.html">
+<meta property="og:image" content="https://dj-urg.github.io/platform-data-access/og-card.png">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&amp;family=IBM+Plex+Mono:wght@400;600&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 <header class="topbar">
   <div class="wrap">
     <a class="brand" href="index.html">Platform<span>·</span>Data<span>·</span>Access</a>
@@ -30,14 +39,17 @@
     </nav>
   </div>
 </header>
-<main>
-<section class="chapterhead wrap">
-  <span class="bignum" aria-hidden="true">03</span>
-  <p class="kicker fade-in">Chapter 3 · Meta</p>
-  <h1 class="fade-in d1">Facebook &amp; Instagram</h1>
-  <p class="lede fade-in d2">The Meta Content Library: public content across Facebook, Instagram, Threads and WhatsApp Channels — inside Meta's clean room, free of charge.</p>
-</section>
-<section class="wrap">
+<main id="main">
+<div class="wrap pagegrid">
+  <article>
+    <section class="chapterhead">
+      <span class="bignum" aria-hidden="true">03</span>
+      <p class="kicker fade-in">Chapter 3 · Meta</p>
+      <h1 class="fade-in d1">Facebook &amp; Instagram</h1>
+      <p class="lede fade-in d2">The Meta Content Library: public content across Facebook, Instagram, Threads and WhatsApp Channels — inside Meta's clean room, free of charge.</p>
+    </section>
+
+<section>
   <dl class="factsheet">
     <dt>What</dt><dd>Meta Content Library (MCL): web interface + API over public Facebook, Instagram, Threads and WhatsApp Channels content. Successor to CrowdTangle (closed August 2024).</dd>
     <dt>Who</dt><dd>Researchers at accredited, degree-granting, not-for-profit academic institutions, or qualified not-for-profit research institutions. Lead researcher cannot be an undergraduate (except for EU/DSA systemic-risk research).</dd>
@@ -47,8 +59,8 @@
     <dt>Docs</dt><dd><a href="https://developers.facebook.com/docs/content-library-and-api/">developers.facebook.com/docs/content-library-and-api</a></dd>
   </dl>
 </section>
-<section class="wrap prose">
-  <h2>What data you get</h2>
+<section class="prose">
+  <h2 id="data">What data you get</h2>
   <ul>
     <li><strong>Facebook:</strong> public posts from Pages, groups and events; posts from profiles with 100+ followers and verified profiles; Marketplace listings; comments.</li>
     <li><strong>Instagram:</strong> posts and accounts of business/creator accounts, personal accounts with 100+ followers, and verified accounts; comments.</li>
@@ -58,7 +70,7 @@
     <li><strong>Excluded:</strong> private content, ads (see Ad Library below), stories (mostly), and CrowdTangle-style live dashboards.</li>
   </ul>
 
-  <h2>How to apply</h2>
+  <h2 id="apply">How to apply</h2>
   <ol class="steps">
     <li>Read the application guide at <a href="https://developers.facebook.com/docs/content-library-and-api/get-access">developers.facebook.com &rarr; get-access</a>.</li>
     <li>The lead researcher applies via the <strong>Research Tools Manager</strong> (link above), describing the research program, the institution and all collaborators, and chooses products: the MCL web UI and/or the API.</li>
@@ -68,27 +80,40 @@
     <li>Reapply via the Research Tools Manager if the research program changes substantially; notify institutional changes to metaresearchapplications@meta.com.</li>
   </ol>
 
-  <h2>Limits and caveats</h2>
+  <h2 id="limits">Limits and caveats</h2>
   <ul>
     <li>All API analysis happens inside the clean room: no raw-data download to your own machine; only vetted outputs (code, tables, figures, aggregates) can be exported. Installing extra packages/models in the environment is restricted.</li>
     <li>Web UI quotas: 60 searches/minute; 500,000 results per rolling 7-day window; CSV downloads only for a narrower subset (large Pages and accounts), max 10 per day.</li>
     <li>Coverage audits (e.g., <a href="references.html#bekavac">Bekavac &amp; Mayer, 2026</a>) find MCL misses a substantial share of what users actually see in feeds, and removed content is least likely to be preserved — design and caveat accordingly.</li>
   </ul>
 
-  <div class="callout">
+  <div class="callout" id="adlib">
     <h3>Also useful: the Meta Ad Library</h3>
     <p>Separate and far more open: the <a href="https://www.facebook.com/ads/library/">Ad Library</a> web UI is fully public (all active ads; EU ads retained at least a year with DSA targeting/reach data; political ads 7 years — frozen in the EU since 6 October 2025, when Meta stopped accepting new political ads there). The <strong>Ad Library API</strong> requires only identity verification (government ID via <a href="https://www.facebook.com/ID">facebook.com/ID</a>) plus a free developer app, and data can be downloaded locally. A practical starting point is The Markup's open-source <a href="https://github.com/the-markup/Ad-Library-API-Script-Repository">script repository</a>.</p>
   </div>
 </section>
-<div class="pager wrap"><a href="dsa.html">&larr; DSA Gateway</a><a href="tiktok.html">TikTok &rarr;</a></div>
+
+    <div class="pager"><a href="dsa.html">&larr; DSA Gateway</a><a href="tiktok.html">TikTok &rarr;</a></div>
+  </article>
+  <aside class="sidetoc" aria-label="On this page">
+    <p class="toct">On this page</p>
+    <ol>
+      <li><a href="#data">What data you get</a></li>
+      <li><a href="#apply">How to apply</a></li>
+      <li><a href="#limits">Limits & caveats</a></li>
+      <li><a href="#adlib">The Ad Library</a></li>
+    </ol>
+  </aside>
+</div>
 </main>
 <footer>
   <div class="wrap">
     <span><strong>Methlab — Vrije Universiteit Brussel</strong></span>
     <span>Version 1.1 · October 2026</span>
-    <span>Fact-checked against live official sources, October 2026</span>
-    <span>Access programs change monthly — always verify on the linked application pages.</span>
+    <span>Monitored with Claude — changes are checked and verified against official sources.</span>
+    <span>Always double-check the linked application pages before applying.</span>
   </div>
 </footer>
+<script>document.querySelector('.sitenav [aria-current]')?.scrollIntoView({inline:'center',block:'nearest'});</script>
 </body>
 </html>

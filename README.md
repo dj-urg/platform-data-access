@@ -6,9 +6,10 @@ TikTok, YouTube, X, Reddit and Telegram — built around the EU Digital Services
 
 **Methlab — Vrije Universiteit Brussel** · Version 1.1 · October 2026
 
-All facts were verified against live official sources in October 2026. Platform access
-programs change frequently: always check the linked application pages for current terms
-before applying.
+All facts were verified against live official sources in October 2026, and the site is
+monitored with Claude: changes are checked and verified against official sources before
+they are published. Platform access programs change frequently: always double-check the
+linked application pages for current terms before applying.
 
 ## Structure
 
@@ -21,7 +22,8 @@ Plain HTML + CSS, no build step. Open `index.html` or serve the folder as-is
 - `toolkit.html` — 4CAT, Zeeschuimer, data donation, web scraping
 - `ethics.html` — ethics, GDPR and VUB practicalities
 - `references.html` — full reference list
-- `styles.css` — shared stylesheet (light + dark themes)
+- `styles.css` — shared stylesheet (light editorial theme)
+- `404.html`, `og-card.png`, `favicon.svg` — not-found page and share assets
 
 ## Keeping it current
 

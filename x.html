@@ -5,13 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>X (formerly Twitter) — Platform Data Access</title>
 <meta name="description" content="X API pricing, the free DSA researcher route after the €120 million fine, and how EU researchers should apply.">
+<link rel="canonical" href="https://dj-urg.github.io/platform-data-access/x.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Platform Data Access">
+<meta property="og:title" content="X (formerly Twitter) — Platform Data Access">
+<meta property="og:description" content="X API pricing, the free DSA researcher route after the €120 million fine, and how EU researchers should apply.">
+<meta property="og:url" content="https://dj-urg.github.io/platform-data-access/x.html">
+<meta property="og:image" content="https://dj-urg.github.io/platform-data-access/og-card.png">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&amp;family=IBM+Plex+Mono:wght@400;600&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 <header class="topbar">
   <div class="wrap">
     <a class="brand" href="index.html">Platform<span>·</span>Data<span>·</span>Access</a>
@@ -30,14 +39,17 @@
     </nav>
   </div>
 </header>
-<main>
-<section class="chapterhead wrap">
-  <span class="bignum" aria-hidden="true">06</span>
-  <p class="kicker fade-in">Chapter 6 · X</p>
-  <h1 class="fade-in d1">X (formerly Twitter)</h1>
-  <p class="lede fade-in d2">Prepaid pay-per-use for everyone — and, after the first DSA non-compliance fine, a free researcher route that X must fix by early 2027.</p>
-</section>
-<section class="wrap">
+<main id="main">
+<div class="wrap pagegrid">
+  <article>
+    <section class="chapterhead">
+      <span class="bignum" aria-hidden="true">06</span>
+      <p class="kicker fade-in">Chapter 6 · X</p>
+      <h1 class="fade-in d1">X (formerly Twitter)</h1>
+      <p class="lede fade-in d2">Prepaid pay-per-use for everyone — and, after the first DSA non-compliance fine, a free researcher route that X must fix by early 2027.</p>
+    </section>
+
+<section>
   <dl class="factsheet">
     <dt>What</dt><dd>X API v2 — now prepaid pay-per-use (subscriptions phased out during 2026). Separate free DSA researcher route for EU systemic-risk research.</dd>
     <dt>Who</dt><dd>Pay-per-use: anyone with a developer account and a payment card. DSA route: EU researchers meeting Art. 40(12) conditions.</dd>
@@ -47,11 +59,11 @@
     <dt>Docs</dt><dd><a href="https://docs.x.com/x-api/getting-started/pricing">docs.x.com — pricing</a></dd>
   </dl>
 </section>
-<section class="wrap prose">
-  <h2>The state of play</h2>
+<section class="prose">
+  <h2 id="state">The state of play</h2>
   <p>The free Academic Research track (10M tweets/month, full-archive search) was shut down in spring 2023 and nothing has replaced it. In February 2026, X closed its Free/Basic/Pro subscriptions to new signups, migrating existing subscribers to prepaid credits over the year: reads are billed per object returned (posts $0.005; user objects $0.010), writes per request. There is a hard ceiling of 3 million post reads per month outside Enterprise contracts. Set a spend cap in the developer console before running any collection.</p>
 
-  <h2>The DSA route — after the &euro;120 million fine</h2>
+  <h2 id="dsa-route">The DSA route — after the &euro;120 million fine</h2>
   <p>On 5 December 2025 the European Commission fined X &euro;120 million — the first DSA non-compliance decision — partly for <strong>failing to give researchers access to public data</strong> (obstructive eligibility screening, inadequate review, overly limited quotas, and terms banning independent collection). In July 2026 the Commission accepted X's corrective plan: eligible researchers must get access <strong>free of charge</strong>, with timely processing and adequate volumes, and X's terms may no longer contractually bar eligible researchers from scraping publicly available data. Implementation is due by about January 2027, under an independent audit.</p>
   <ol class="steps">
     <li>For EU systemic-risk research, apply via the X DSA Researcher Application Form, linked from <a href="https://help.x.com/en/rules-and-policies/dsa-vetted-researchers">help.x.com/en/rules-and-policies/dsa-vetted-researchers</a> (open the page in a normal browser; it blocks automated access). Frame the proposal explicitly around DSA Art. 34/35 systemic risks (disinformation, elections, minors, mental health, illegal content, fundamental rights).</li>
@@ -60,15 +72,26 @@
     <li>Document every interaction with X — response times and refusals are relevant evidence under the Commission's enhanced supervision.</li>
   </ol>
 </section>
-<div class="pager wrap"><a href="youtube.html">&larr; YouTube</a><a href="reddit.html">Reddit &rarr;</a></div>
+
+    <div class="pager"><a href="youtube.html">&larr; YouTube</a><a href="reddit.html">Reddit &rarr;</a></div>
+  </article>
+  <aside class="sidetoc" aria-label="On this page">
+    <p class="toct">On this page</p>
+    <ol>
+      <li><a href="#state">The state of play</a></li>
+      <li><a href="#dsa-route">The DSA route</a></li>
+    </ol>
+  </aside>
+</div>
 </main>
 <footer>
   <div class="wrap">
     <span><strong>Methlab — Vrije Universiteit Brussel</strong></span>
     <span>Version 1.1 · October 2026</span>
-    <span>Fact-checked against live official sources, October 2026</span>
-    <span>Access programs change monthly — always verify on the linked application pages.</span>
+    <span>Monitored with Claude — changes are checked and verified against official sources.</span>
+    <span>Always double-check the linked application pages before applying.</span>
   </div>
 </footer>
+<script>document.querySelector('.sitenav [aria-current]')?.scrollIntoView({inline:'center',block:'nearest'});</script>
 </body>
 </html>
