@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reddit — Platform Data Access</title>
+<meta name="description" content="Reddit's public Data API closes in March 2027: how to request access before 31 October 2026, Reddit for Researchers, and the archives.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="index.html">Platform<span>·</span>Data<span>·</span>Access</a>
+    <nav class="sitenav" aria-label="Site">
+        <a href="index.html">Overview</a>
+        <a href="dsa.html">DSA Gateway</a>
+        <a href="meta.html">Meta</a>
+        <a href="tiktok.html">TikTok</a>
+        <a href="youtube.html">YouTube</a>
+        <a href="x.html">X</a>
+        <a href="reddit.html" aria-current="page">Reddit</a>
+        <a href="telegram.html">Telegram</a>
+        <a href="toolkit.html">Toolkit</a>
+        <a href="ethics.html">Ethics</a>
+        <a href="references.html">References</a>
+    </nav>
+  </div>
+</header>
+<main>
+<section class="chapterhead wrap">
+  <span class="bignum" aria-hidden="true">07</span>
+  <p class="kicker fade-in">Chapter 7 · Reddit</p>
+  <h1 class="fade-in d1">Reddit</h1>
+  <p class="lede fade-in d2">The public Data API is closing. Request access before 31 October 2026 — and ask about Reddit for Researchers in the same ticket.</p>
+</section>
+<section class="wrap">
+  <div class="callout urgent">
+    <h3>Act before 31 October 2026</h3>
+    <p>Reddit announced on 30 September 2026 that it is phasing out its public Data API: <strong>31 October 2026</strong> is the last day to request new access; RSS feeds end 13 November 2026; unregistered apps lose access from 12 January 2027; the public API closes entirely in <strong>March 2027</strong>. After that, the stated routes are commercial licensing or the (research-unsuitable) Devvit developer platform. If Reddit data might ever matter to your research, file a request now.</p>
+  </div>
+  <dl class="factsheet">
+    <dt>What</dt><dd>Reddit Data API (OAuth, free) — closing March 2027. Reddit for Researchers (R4R): invite-gated beta for bulk SQL/Python access, run with OpenMined.</dd>
+    <dt>Who</dt><dd>Since November 2025, access requires approval via a support ticket (academic affiliation and research purpose); eligible researchers are referred to R4R.</dd>
+    <dt>Cost</dt><dd>Free (academic, non-commercial).</dd>
+    <dt>Timeline</dt><dd>Ticket review target ~7 days (informal staff target); R4R invitations in cohorts.</dd>
+    <dt>Apply via</dt><dd><a href="https://support.reddithelp.com">support.reddithelp.com</a> + <a href="https://www.reddit.com/r/reddit4researchers/">r/reddit4researchers</a></dd>
+    <dt>Terms</dt><dd><a href="https://www.redditinc.com/policies/data-api-terms">redditinc.com/policies/data-api-terms</a></dd>
+  </dl>
+</section>
+<section class="wrap prose">
+  <h2>While the Data API still works</h2>
+  <ol class="steps">
+    <li>Create a Reddit account and enable two-factor authentication.</li>
+    <li>File a Data API access request via <a href="https://support.reddithelp.com">support.reddithelp.com</a> (the route introduced by the November 2025 &ldquo;Responsible Builder Policy&rdquo;), stating your academic affiliation, research question and non-commercial purpose. Ask to be considered for Reddit for Researchers in the same ticket.</li>
+    <li>If approved, register a &ldquo;script&rdquo; app at <a href="https://www.reddit.com/prefs/apps">reddit.com/prefs/apps</a> for an OAuth client ID and secret; also register at <a href="https://developers.reddit.com/app-registration">developers.reddit.com/app-registration</a> so the app survives the January 2027 cutoff until the final closure.</li>
+    <li>Collect with PRAW (Python) at up to 100 queries/minute per client, with a descriptive User-Agent. The terms confine the free tier to non-commercial use (commercial use needs a separate agreement), forbid redistributing data or training AI models, and require honouring user deletions.</li>
+  </ol>
+
+  <h2>Reddit for Researchers and the archives</h2>
+  <p><strong>Reddit for Researchers (R4R)</strong> — a privacy-preserving bulk access product (SQL/Python) built with OpenMined, aimed at PIs at accredited universities — remains an application-gated beta and is presumably the main academic route after March 2027, though Reddit has not said so explicitly. (Note: Reddit was designated a VLOP under the DSA on 31 August 2026, so an Art. 40 data-access route should open once its obligations apply around the end of 2026 — see the <a href="dsa.html">DSA Gateway</a>.) Monitor <a href="https://www.reddit.com/r/reddit4researchers/">r/reddit4researchers</a>.</p>
+  <p><strong>Pushshift</strong> has been moderator-only since May 2023 — dead for academics. Community-scraped archives exist (<a href="https://academictorrents.com">Academic Torrents dumps</a>, <a href="https://github.com/ArthurHeitmann/arctic_shift">Arctic Shift</a>) and are widely used in published research, but they are collected without Reddit's authorisation, likely breach its terms, retain deleted content (a GDPR concern), and may face more aggressive enforcement after the API closes. Consult your ethics committee and never redistribute them.</p>
+</section>
+<div class="pager wrap"><a href="x.html">&larr; X</a><a href="telegram.html">Telegram &rarr;</a></div>
+</main>
+<footer>
+  <div class="wrap">
+    <span><strong>Methlab — Vrije Universiteit Brussel</strong></span>
+    <span>Version 1.1 · October 2026</span>
+    <span>Fact-checked against live official sources, October 2026</span>
+    <span>Access programs change monthly — always verify on the linked application pages.</span>
+  </div>
+</footer>
+</body>
+</html>

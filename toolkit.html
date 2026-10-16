@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Academic Toolkit — 4CAT, Zeeschuimer, Data Donation</title>
+<meta name="description" content="When API access falls short: 4CAT, Zeeschuimer, data donation and the honest paragraph on web scraping.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="index.html">Platform<span>·</span>Data<span>·</span>Access</a>
+    <nav class="sitenav" aria-label="Site">
+        <a href="index.html">Overview</a>
+        <a href="dsa.html">DSA Gateway</a>
+        <a href="meta.html">Meta</a>
+        <a href="tiktok.html">TikTok</a>
+        <a href="youtube.html">YouTube</a>
+        <a href="x.html">X</a>
+        <a href="reddit.html">Reddit</a>
+        <a href="telegram.html">Telegram</a>
+        <a href="toolkit.html" aria-current="page">Toolkit</a>
+        <a href="ethics.html">Ethics</a>
+        <a href="references.html">References</a>
+    </nav>
+  </div>
+</header>
+<main>
+<section class="chapterhead wrap">
+  <span class="bignum" aria-hidden="true">09</span>
+  <p class="kicker fade-in">Chapter 9 · The toolkit</p>
+  <h1 class="fade-in d1">When API access falls short</h1>
+  <p class="lede fade-in d2">4CAT, Zeeschuimer, data donation and — honestly — web scraping: the academic fallbacks when official access is closed or quota-starved.</p>
+</section>
+<section class="wrap prose">
+  <h2>4CAT — collection and analysis without coding</h2>
+  <p><a href="https://4cat.nl">4CAT</a> (Digital Methods Initiative, University of Amsterdam; <a href="references.html#peeters">Peeters &amp; Hagen, 2022</a>) is the workhorse of European digital methods labs: a web-based tool that collects from Telegram, Bluesky, 4chan, Tumblr and TikTok (via URL lists), imports from Zeeschuimer and other tools, and chains analysis &ldquo;processors&rdquo; transparently. Actively maintained (v1.57, September 2026). Labs typically run a shared Docker instance (<a href="https://github.com/digitalmethodsinitiative/4cat/wiki/Installing-4CAT">installation guide</a>) — a sensible Methlab infrastructure investment.</p>
+
+  <h2>Zeeschuimer — capture what you see</h2>
+  <p><a href="https://github.com/digitalmethodsinitiative/zeeschuimer">Zeeschuimer</a> is a Firefox extension (same team, v1.14.3, September 2026) that logs the data a platform's own web app loads while you browse — nothing more, nothing less. It covers 11 platforms including TikTok (posts + comments), Instagram, Threads, X and RedNote, and ships captures straight into 4CAT or NDJSON/CSV files. It is the standard fallback where APIs are closed (Instagram) or quota-starved (TikTok), and inherently documents a real user's vantage point.</p>
+
+  <h2>Data donation — access through participants' own data rights</h2>
+  <p>Under GDPR Articles 15 and 20, every platform must give users a machine-readable export of their own data. Data donation studies recruit participants who download that package and donate a filtered subset — the only route to watch histories, feeds and exposure data no API provides, with consent built in. The mature infrastructure is <a href="https://datadonation.eu">datadonation.eu</a> (the Digital Data Donation Infrastructure, D3I — now an ODISSEI service, with VU Amsterdam among the partners) built on the open-source <strong>Port</strong> software, which extracts only the relevant data points locally in the participant's browser and transmits nothing without explicit consent (<a href="references.html#boeschoten">Boeschoten et al., 2023</a>; see also <a href="references.html#ausloos">Ausloos &amp; Veale, 2020</a>, on researching with data rights).</p>
+
+  <h2>Web scraping — the honest paragraph</h2>
+  <p>Scraping publicly accessible data for academic research is not prohibited by EU law as such, and the GDPR's research provisions accommodate it (purpose-compatibility presumption, Art. 89 safeguards) — provided you still meet GDPR's principles: a lawful basis, minimisation, security, and a DPIA where required. DSA Art. 40(12) strengthens the position against VLOPs, and the Commission's 2025 decision against X treated terms banning researcher scraping of public data as part of X's non-compliance. The residual tension is contractual: platform terms typically forbid automated collection, and breach risks account suspension or legal letters rather than criminal liability. Weigh public interest, minimisation and researcher safety with your ethics committee before scraping (<a href="references.html#brown">Brown et al., 2024</a>; <a href="references.html#mancosu">Mancosu &amp; Vegetti, 2020</a>).</p>
+</section>
+<div class="pager wrap"><a href="telegram.html">&larr; Telegram</a><a href="ethics.html">Ethics &rarr;</a></div>
+</main>
+<footer>
+  <div class="wrap">
+    <span><strong>Methlab — Vrije Universiteit Brussel</strong></span>
+    <span>Version 1.1 · October 2026</span>
+    <span>Fact-checked against live official sources, October 2026</span>
+    <span>Access programs change monthly — always verify on the linked application pages.</span>
+  </div>
+</footer>
+</body>
+</html>

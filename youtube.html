@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YouTube Data API & Researcher Program — Platform Data Access</title>
+<meta name="description" content="Getting a YouTube Data API key, the YouTube Researcher Program, and the Google Researcher Program EU/DSA route.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="index.html">Platform<span>·</span>Data<span>·</span>Access</a>
+    <nav class="sitenav" aria-label="Site">
+        <a href="index.html">Overview</a>
+        <a href="dsa.html">DSA Gateway</a>
+        <a href="meta.html">Meta</a>
+        <a href="tiktok.html">TikTok</a>
+        <a href="youtube.html" aria-current="page">YouTube</a>
+        <a href="x.html">X</a>
+        <a href="reddit.html">Reddit</a>
+        <a href="telegram.html">Telegram</a>
+        <a href="toolkit.html">Toolkit</a>
+        <a href="ethics.html">Ethics</a>
+        <a href="references.html">References</a>
+    </nav>
+  </div>
+</header>
+<main>
+<section class="chapterhead wrap">
+  <span class="bignum" aria-hidden="true">05</span>
+  <p class="kicker fade-in">Chapter 5 · YouTube</p>
+  <h1 class="fade-in d1">Data API &amp; Researcher Program</h1>
+  <p class="lede fade-in d2">A free API key in fifteen minutes, elevated quota through the Researcher Program, and the Google Researcher Program as the EU/DSA route.</p>
+</section>
+<section class="wrap">
+  <dl class="factsheet">
+    <dt>What</dt><dd>YouTube Data API v3 (open to anyone, free) + YouTube Researcher Program (elevated quota for academics) + Google Researcher Program (EU DSA route, also covers Search/Trends).</dd>
+    <dt>Who</dt><dd>Data API: anyone with a Google account. Researcher Program: students, research staff or faculty at accredited not-for-profit degree-granting institutions (VUB qualifies).</dd>
+    <dt>Cost</dt><dd>Free.</dd>
+    <dt>Timeline</dt><dd>Data API key: ~15 minutes, self-service. Researcher Program: weeks to months (no published timeline).</dd>
+    <dt>Apply at</dt><dd><a href="https://research.youtube.com/how-it-works">research.youtube.com</a> / <a href="https://transparency.google/researcher-engagement">Google Researcher Program</a></dd>
+    <dt>Docs</dt><dd><a href="https://developers.google.com/youtube/v3/getting-started">developers.google.com/youtube/v3</a></dd>
+  </dl>
+</section>
+<section class="wrap prose">
+  <h2>Step one for everyone: a Data API key</h2>
+  <ol class="steps">
+    <li>Sign in at <a href="https://console.cloud.google.com/">console.cloud.google.com</a> (institutional Google account recommended) and create a new Cloud project. No billing account is needed.</li>
+    <li>In APIs &amp; Services &rarr; Library, search &ldquo;YouTube Data API v3&rdquo; and click Enable.</li>
+    <li>In APIs &amp; Services &rarr; Credentials, create an API key. That key is all you need to read public data (OAuth is only required to access a user's private data, e.g., in data donation designs).</li>
+    <li>Monitor your usage under IAM &amp; Admin &rarr; Quotas.</li>
+  </ol>
+  <div class="callout">
+    <h3>Quota — note the 2026 restructuring</h3>
+    <p>Since 1 June 2026, <code>search.list</code> and <code>videos.insert</code> each have their own separate bucket of 100 calls/day; the default 10,000 units/day covers all other endpoints. Most list reads (videos, channels, playlists, comments) cost 1 unit; every page of results costs again. Many older tutorials still describe search costing 100 units from the main pool — that is obsolete.</p>
+  </div>
+
+  <h2>The YouTube Researcher Program (more quota)</h2>
+  <ol class="steps">
+    <li>Check eligibility at <a href="https://research.youtube.com/how-it-works">research.youtube.com/how-it-works</a>: affiliated with an accredited not-for-profit degree-granting institution; a clear research goal; findings published and publicly available; no Google/Alphabet affiliation. No topic restrictions.</li>
+    <li>Create your Cloud project and enable the Data API first — the application asks for the project ID.</li>
+    <li>Apply with your institutional email at the <a href="https://support.google.com/youtube/contact/yt_researcher_certification">researcher certification form</a>, describing the project in as much detail as possible.</li>
+    <li>Accept the program terms if approved. Note: YouTube obtains free access to research based on YouTube data after publication, and findings must be made publicly available. The granted quota is &ldquo;as much as the research requires&rdquo; (no published figure).</li>
+  </ol>
+
+  <h2>The EU/DSA route: Google Researcher Program</h2>
+  <p>Google operationalises DSA Art. 40(12) through the <a href="https://transparency.google/researcher-engagement">Google Researcher Program</a>: EU-affiliated, non-commercial researchers studying EU systemic risks can request access covering YouTube plus Google Search (including Trends and the Search Researcher Result API), Maps, Play and Shopping. Apply at <a href="https://requestrecords.google.com/researcher">requestrecords.google.com/researcher</a> — use a dedicated, non-personal Google account. For non-public data, the <a href="dsa.html">Art. 40(4) portal route</a> applies; Google's contact is dsa-article-40-4@google.com.</p>
+
+  <h2>What the APIs will not give you</h2>
+  <p>No watch or search histories, no recommendation (&ldquo;up next&rdquo;) data, no impressions or user demographics (for channels you do not own), no dislike counts, no deleted videos. Recommender-system research still requires audit designs (sock puppets, crawls) or data donation — see the <a href="toolkit.html">toolkit</a> and <a href="ethics.html">ethics</a> chapters before attempting either.</p>
+</section>
+<div class="pager wrap"><a href="tiktok.html">&larr; TikTok</a><a href="x.html">X &rarr;</a></div>
+</main>
+<footer>
+  <div class="wrap">
+    <span><strong>Methlab — Vrije Universiteit Brussel</strong></span>
+    <span>Version 1.1 · October 2026</span>
+    <span>Fact-checked against live official sources, October 2026</span>
+    <span>Access programs change monthly — always verify on the linked application pages.</span>
+  </div>
+</footer>
+</body>
+</html>

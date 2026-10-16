@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Telegram — Platform Data Access</title>
+<meta name="description" content="Researching Telegram with the MTProto API: getting api_id and api_hash, rate limits, ban risk and the rules.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="index.html">Platform<span>·</span>Data<span>·</span>Access</a>
+    <nav class="sitenav" aria-label="Site">
+        <a href="index.html">Overview</a>
+        <a href="dsa.html">DSA Gateway</a>
+        <a href="meta.html">Meta</a>
+        <a href="tiktok.html">TikTok</a>
+        <a href="youtube.html">YouTube</a>
+        <a href="x.html">X</a>
+        <a href="reddit.html">Reddit</a>
+        <a href="telegram.html" aria-current="page">Telegram</a>
+        <a href="toolkit.html">Toolkit</a>
+        <a href="ethics.html">Ethics</a>
+        <a href="references.html">References</a>
+    </nav>
+  </div>
+</header>
+<main>
+<section class="chapterhead wrap">
+  <span class="bignum" aria-hidden="true">08</span>
+  <p class="kicker fade-in">Chapter 8 · Telegram</p>
+  <h1 class="fade-in d1">Telegram</h1>
+  <p class="lede fade-in d2">No research program, no DSA route — research runs on the full Telegram API with your own account, the same API the official apps use.</p>
+</section>
+<section class="wrap">
+  <dl class="factsheet">
+    <dt>What</dt><dd>No research program and no DSA route (not a designated VLOP). Research runs on the full Telegram API (MTProto) with your own user account — the same API official apps use.</dd>
+    <dt>Who</dt><dd>Anyone with a Telegram account; no application or review.</dd>
+    <dt>Cost</dt><dd>Free.</dd>
+    <dt>Timeline</dt><dd>Credentials in ~10 minutes, self-service.</dd>
+    <dt>Get credentials</dt><dd><a href="https://my.telegram.org">my.telegram.org</a></dd>
+    <dt>Docs</dt><dd><a href="https://core.telegram.org/api/obtaining_api_id">core.telegram.org/api/obtaining_api_id</a></dd>
+  </dl>
+</section>
+<section class="wrap prose">
+  <h2>Getting API credentials</h2>
+  <ol class="steps">
+    <li>Create a Telegram account with an official app. Many researchers use a dedicated research account/SIM to separate research from personal use; note that fresh accounts doing immediate bulk collection face elevated ban risk, and each phone number can hold only one API registration.</li>
+    <li>Log in at <a href="https://my.telegram.org">my.telegram.org</a> with that phone number (the login code arrives inside Telegram).</li>
+    <li>Open &ldquo;API development tools&rdquo;, fill in the short application form (app title, short name, platform), and receive your <code>api_id</code> and <code>api_hash</code>. Keep both secret — together with your login they grant full account access.</li>
+    <li>Use them from Python with <a href="https://docs.telethon.dev">Telethon</a> (actively maintained; the academic standard) — or let <strong>4CAT</strong> handle collection without coding (<a href="toolkit.html">see the toolkit</a>): its Telegram data source takes your api_id/api_hash and logs in as you. Avoid the unmaintained Pyrogram and Telepathy.</li>
+  </ol>
+
+  <h2>What researchers collect, and the rules</h2>
+  <p>A logged-in account can read the complete history of any public channel or open group it can see as a normal user: posts, views and forward counts, reactions, comments, and the forwarding metadata used to snowball-sample from seed channels — the standard discovery method; see the TeleScope dataset (<a href="references.html#telescope">Gangopadhyay et al., 2025</a>) for a reusable large-scale example built this way.</p>
+  <ul>
+    <li><strong>Rate limits are undocumented:</strong> the server answers over-eager clients with FLOOD_WAIT errors. Username/link resolution is the most heavily limited call; resolve channels by ID where possible, add delays, and let Telethon's built-in flood handling work. Never parallelise across multiple &ldquo;farmed&rdquo; accounts.</li>
+    <li><strong>Ban risk is real:</strong> accounts using the API for flooding or fake engagement &ldquo;will be banned forever&rdquo;, and all unofficial-client logins are &ldquo;put under observation&rdquo;. Wrongful bans can be appealed with an explanation of the research at recover@telegram.org.</li>
+    <li><strong>Terms of service:</strong> Telegram's API terms (&sect;1.5) prohibit using platform data to train AI/ML models — relevant if your pipeline involves fine-tuning. Scraping public channels is otherwise not addressed and is established research practice; private/invite-only groups are another matter entirely (covert joining raises consent problems most ethics boards treat as human-subjects research).</li>
+    <li><strong>GDPR:</strong> messages and usernames are personal data. Rely on the research provisions (Art. 89 safeguards, Art. 14(5)(b)), do a DPIA for large collections, avoid harvesting member lists, and de-identify users in publications. Consult VUB's DPO (dpo@vub.be).</li>
+  </ul>
+</section>
+<div class="pager wrap"><a href="reddit.html">&larr; Reddit</a><a href="toolkit.html">Toolkit &rarr;</a></div>
+</main>
+<footer>
+  <div class="wrap">
+    <span><strong>Methlab — Vrije Universiteit Brussel</strong></span>
+    <span>Version 1.1 · October 2026</span>
+    <span>Fact-checked against live official sources, October 2026</span>
+    <span>Access programs change monthly — always verify on the linked application pages.</span>
+  </div>
+</footer>
+</body>
+</html>

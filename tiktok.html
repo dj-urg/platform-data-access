@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TikTok Research API — Platform Data Access</title>
+<meta name="description" content="How researchers apply for the TikTok Research API: eligibility, quota, data scope and the Commercial Content API.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="index.html">Platform<span>·</span>Data<span>·</span>Access</a>
+    <nav class="sitenav" aria-label="Site">
+        <a href="index.html">Overview</a>
+        <a href="dsa.html">DSA Gateway</a>
+        <a href="meta.html">Meta</a>
+        <a href="tiktok.html" aria-current="page">TikTok</a>
+        <a href="youtube.html">YouTube</a>
+        <a href="x.html">X</a>
+        <a href="reddit.html">Reddit</a>
+        <a href="telegram.html">Telegram</a>
+        <a href="toolkit.html">Toolkit</a>
+        <a href="ethics.html">Ethics</a>
+        <a href="references.html">References</a>
+    </nav>
+  </div>
+</header>
+<main>
+<section class="chapterhead wrap">
+  <span class="bignum" aria-hidden="true">04</span>
+  <p class="kicker fade-in">Chapter 4 · TikTok</p>
+  <h1 class="fade-in d1">TikTok Research API</h1>
+  <p class="lede fade-in d2">Public videos, comments, profiles and follower networks — TikTok's DSA Art. 40(12) mechanism, free for eligible academics.</p>
+</section>
+<section class="wrap">
+  <dl class="factsheet">
+    <dt>What</dt><dd>TikTok Research API + Virtual Compute Environment: public videos, comments, profiles, follower networks. TikTok's DSA Art. 40(12) mechanism.</dd>
+    <dt>Who</dt><dd>Academics at institutions in the EEA, US, UK, Canada or Switzerland; academic and not-for-profit institutions in Brazil (online youth-safety research); EU not-for-profit research organisations (usually via the compute environment only). PhD candidates need a supervisor's endorsement letter.</dd>
+    <dt>Cost</dt><dd>Free.</dd>
+    <dt>Timeline</dt><dd>Officially up to 4 weeks; in practice often longer.</dd>
+    <dt>Apply at</dt><dd><a href="https://developers.tiktok.com/application/research-api">developers.tiktok.com/application/research-api</a></dd>
+    <dt>Docs</dt><dd><a href="https://developers.tiktok.com/products/research-api/">developers.tiktok.com/products/research-api</a></dd>
+  </dl>
+</section>
+<section class="wrap prose">
+  <h2>What data you get</h2>
+  <p>Public videos (description, creation time, hashtags, music, view/like/comment/share counts), comments, user profiles (bio, follower counts), follower and following lists, liked/pinned/reposted videos, and EU TikTok Shop data. Full field list: <a href="https://developers.tiktok.com/doc/research-api-codebook">Research API codebook</a>. Note the freshness lags: new videos appear after up to 48 hours; statistics update within up to 10 days.</p>
+
+  <h2>How to apply</h2>
+  <ol class="steps">
+    <li>Create a TikTok for Developers account with your institutional email: <a href="https://developers.tiktok.com/signup">developers.tiktok.com/signup</a>.</li>
+    <li>Submit the research application (link above) with: institutional details, a clearly defined research proposal, funding disclosure, evidence of ethics review (ethics committee approval), a data security plan, and named collaborators. PhD candidates attach the advisor endorsement letter (template on the application page).</li>
+    <li>Review takes up to ~4 weeks officially (longer in practice). On approval the principal researcher manages the organisation account and can add up to 9 collaborators (each reviewed individually; collaborators at other institutions need their own application).</li>
+    <li>Build against the <a href="https://developers.tiktok.com/doc/research-api-get-started">getting-started guide</a>; access tokens expire every 2 hours. Check the current Research API Terms — they include obligations to periodically refresh/delete stored data.</li>
+  </ol>
+
+  <h2>Limits and caveats</h2>
+  <ul>
+    <li><strong>Quota (shared by your whole lab/organisation):</strong> 1,000 requests and 100,000 records per day; 100 records per request; follower/following endpoints have a separate 2M records/day allowance. Daily reset 00:00 UTC. TikTok states it grants no exceptions.</li>
+    <li>Independent audits report substantial, unexplained gaps between what users see and what the API returns (e.g., an AI Forensics audit testing ~260,000 data-donated video URLs: <a href="references.html#entrena">Entrena-Serrano et al., 2025</a>; <a href="references.html#bekavac">Bekavac &amp; Mayer, 2026</a>). Treat completeness as an empirical question in your design.</li>
+    <li><strong>Separate ad transparency route:</strong> the <a href="https://developers.tiktok.com/products/commercial-content-api/">Commercial Content API</a> (EU ads and commercial content; open to researchers and the public worldwide; approval typically within ~2 working days) and the public <a href="https://library.tiktok.com">Commercial Content Library</a>.</li>
+  </ul>
+</section>
+<div class="pager wrap"><a href="meta.html">&larr; Meta</a><a href="youtube.html">YouTube &rarr;</a></div>
+</main>
+<footer>
+  <div class="wrap">
+    <span><strong>Methlab — Vrije Universiteit Brussel</strong></span>
+    <span>Version 1.1 · October 2026</span>
+    <span>Fact-checked against live official sources, October 2026</span>
+    <span>Access programs change monthly — always verify on the linked application pages.</span>
+  </div>
+</footer>
+</body>
+</html>

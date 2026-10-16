@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Platform Data Access — A Researcher's Guide (Methlab, VUB)</title>
+<meta name="description" content="How academic researchers get data access to Meta, TikTok, YouTube, X, Reddit and Telegram — including the EU DSA Article 40 routes.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="index.html">Platform<span>·</span>Data<span>·</span>Access</a>
+    <nav class="sitenav" aria-label="Site">
+        <a href="index.html" aria-current="page">Overview</a>
+        <a href="dsa.html">DSA Gateway</a>
+        <a href="meta.html">Meta</a>
+        <a href="tiktok.html">TikTok</a>
+        <a href="youtube.html">YouTube</a>
+        <a href="x.html">X</a>
+        <a href="reddit.html">Reddit</a>
+        <a href="telegram.html">Telegram</a>
+        <a href="toolkit.html">Toolkit</a>
+        <a href="ethics.html">Ethics</a>
+        <a href="references.html">References</a>
+    </nav>
+  </div>
+</header>
+<main>
+
+<section class="hero wrap">
+  <p class="kicker fade-in">Methlab — Vrije Universiteit Brussel · October 2026</p>
+  <h1 class="fade-in d1">Getting Access to<br>Platform Data</h1>
+  <hr class="rule fade-in d2">
+  <p class="lede fade-in d2">What APIs are, why they matter for digital research, and step-by-step instructions for obtaining research data access to Meta, TikTok, YouTube, X, Reddit and Telegram — built around the EU Digital Services Act (Article&nbsp;40) routes available to academics.</p>
+  <p class="fade-in d3" style="margin-top:1.6rem"><span class="stamp">&#10003;&nbsp;Verified against live sources · Oct 2026</span></p>
+</section>
+
+<section class="wrap">
+  <h2 id="read-first">Read this first: time-sensitive changes</h2>
+  <div class="alerts">
+    <div class="alert">
+      <h3>Reddit is closing its public Data API</h3>
+      <p>New access requests are accepted only until <strong>31 October 2026</strong>; the API closes entirely in March 2027. If anyone on your team may ever need Reddit data, <a href="reddit.html">file a request now</a>.</p>
+    </div>
+    <div class="alert">
+      <h3>X phased out API subscriptions in 2026</h3>
+      <p>API access is now prepaid pay-per-use (about $0.005 per post read). The free academic track is long gone — but after a &euro;120&nbsp;million DSA fine in December 2025, X must give eligible EU researchers <a href="x.html">free access to public data</a>.</p>
+    </div>
+    <div class="alert">
+      <h3>Meta changed its application route in December 2025</h3>
+      <p>Meta Content Library applications no longer go through ICPSR/SOMAR but through Meta's own <a href="meta.html">Research Tools Manager</a>, with independent review by France's CASD. Older guides describing the SOMAR route are obsolete.</p>
+    </div>
+    <div class="alert">
+      <h3>The DSA &lsquo;vetted researcher&rsquo; procedure is live</h3>
+      <p>Since 29 October 2025, EU researchers can formally request non-public platform data through the European Commission's <a href="dsa.html">DSA Data Access Portal</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap prose">
+  <h2 id="why">Why APIs matter for research</h2>
+  <p>An <strong>API (Application Programming Interface)</strong> is &ldquo;a set of features and rules that exist inside a software program (the application) enabling interaction with it through software — as opposed to a human user interface&rdquo; (<a href="references.html#mdn">MDN Web Docs, n.d.</a>). Where a platform's app or website is built for human eyes, its API is the doorway built for programs: you send a structured request (&ldquo;give me all public TikTok videos with this hashtag posted in March&rdquo;) and receive structured data back — typically JSON, ready for analysis.</p>
+  <ul>
+    <li><strong>Scale and precision.</strong> APIs return thousands of records in machine-readable form, with exact field definitions — no manual copying, no ambiguity about what a &ldquo;view count&rdquo; means.</li>
+    <li><strong>Reproducibility and transparency.</strong> An API query can be documented, shared and re-run. Reviewers and collaborators can see exactly how a dataset was constructed (<a href="references.html#peeters">Peeters &amp; Hagen, 2022</a>).</li>
+    <li><strong>A defined legal footing.</strong> Official research APIs come with terms of service that explicitly permit academic use — a far more solid position with ethics committees, data protection officers and journals than ad-hoc scraping (<a href="references.html#ohme">Ohme et al., 2024</a>).</li>
+    <li><strong>Access to data no browser shows.</strong> Many APIs expose metadata the interface hides: precise timestamps, forwarding chains, ad targeting parameters, aggregate engagement histories.</li>
+  </ul>
+  <h3>The post-API age — and the new EU era</h3>
+  <p>Access has never been stable. After the Cambridge Analytica scandal (2018), platforms sharply restricted the open APIs that had fuelled a decade of social media research — what <a href="references.html#freelon">Freelon (2018)</a> called the &ldquo;post-API age&rdquo; and <a href="references.html#bruns">Bruns (2019)</a> the &ldquo;APIcalypse.&rdquo; Twitter's celebrated free Academic API was shut in 2023; CrowdTangle, the main window into Facebook and Instagram, was closed in August 2024; Reddit is closing its public API in 2027. <a href="references.html#tromble">Tromble (2021)</a> describes the result: researchers dependent on platform goodwill, with unequal and unpredictable access.</p>
+  <p>Since 2024, however, the pendulum has swung back — in Europe. <strong>Article 40 of the EU Digital Services Act</strong> legally obliges the largest platforms to give researchers data access for studying systemic risks in the EU. Every major platform now runs a researcher access program because it must. This guide therefore treats <a href="dsa.html">the DSA as the backbone</a> of platform data access, and each platform's own program as the practical doorway to it (<a href="references.html#seiling">Seiling et al., 2025</a>).</p>
+</section>
+
+<section class="wrap">
+  <h2 id="platforms">The platforms</h2>
+  <div class="cards">
+    <a class="pcard" href="meta.html">
+      <span class="num" aria-hidden="true">03</span>
+      <h3>Meta — Facebook &amp; Instagram</h3>
+      <div class="chips"><span class="chip free">Free</span><span class="chip dsa">DSA route</span><span class="chip neutral">4&ndash;6 weeks</span></div>
+      <p>The Meta Content Library: public FB, IG, Threads and WhatsApp Channels content via a clean-room web UI and API, with CASD-reviewed applications.</p>
+      <span class="go">Read the chapter &rarr;</span>
+    </a>
+    <a class="pcard" href="tiktok.html">
+      <span class="num" aria-hidden="true">04</span>
+      <h3>TikTok</h3>
+      <div class="chips"><span class="chip free">Free</span><span class="chip dsa">DSA route</span><span class="chip neutral">~4 weeks+</span></div>
+      <p>The Research API: public videos, comments, profiles and follower networks — with a shared daily quota and ethics review required upfront.</p>
+      <span class="go">Read the chapter &rarr;</span>
+    </a>
+    <a class="pcard" href="youtube.html">
+      <span class="num" aria-hidden="true">05</span>
+      <h3>YouTube</h3>
+      <div class="chips"><span class="chip free">Free</span><span class="chip dsa">DSA route</span><span class="chip neutral">Minutes to months</span></div>
+      <p>A self-service Data API key in minutes, the Researcher Program for serious quota, and the Google Researcher Program as the EU/DSA route.</p>
+      <span class="go">Read the chapter &rarr;</span>
+    </a>
+    <a class="pcard" href="x.html">
+      <span class="num" aria-hidden="true">06</span>
+      <h3>X (formerly Twitter)</h3>
+      <div class="chips"><span class="chip paid">$0.005/post</span><span class="chip dsa">Free DSA route</span></div>
+      <p>Prepaid pay-per-use API — or the free DSA researcher route, improving under European Commission supervision after the &euro;120M fine.</p>
+      <span class="go">Read the chapter &rarr;</span>
+    </a>
+    <a class="pcard" href="reddit.html">
+      <span class="num" aria-hidden="true">07</span>
+      <h3>Reddit</h3>
+      <div class="chips"><span class="chip free">Free</span><span class="chip deadline">Requests close 31 Oct 2026</span></div>
+      <p>The Data API closes in March 2027. File a support-ticket request now, and ask to join Reddit for Researchers in the same ticket.</p>
+      <span class="go">Read the chapter &rarr;</span>
+    </a>
+    <a class="pcard" href="telegram.html">
+      <span class="num" aria-hidden="true">08</span>
+      <h3>Telegram</h3>
+      <div class="chips"><span class="chip free">Free</span><span class="chip neutral">Self-service</span></div>
+      <p>No research program and no DSA route — research runs on the full MTProto API with your own account. Credentials in ten minutes.</p>
+      <span class="go">Read the chapter &rarr;</span>
+    </a>
+  </div>
+</section>
+
+<section class="wrap">
+  <h2 id="glance">All platforms at a glance</h2>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>Platform</th><th>Official route</th><th>Cost</th><th>Typical wait</th><th>Watch out</th></tr></thead>
+    <tbody>
+      <tr><td>Meta (FB/IG)</td><td>Meta Content Library via Research Tools Manager + CASD review</td><td>Free</td><td>4&ndash;6 weeks</td><td>Clean-room only; no raw export; coverage gaps</td></tr>
+      <tr><td>TikTok</td><td>Research API via TikTok for Developers</td><td>Free</td><td>~4 weeks+</td><td>100k records/day shared quota; ethics review required upfront</td></tr>
+      <tr><td>YouTube</td><td>Data API key (instant) + Researcher Program for quota</td><td>Free</td><td>Minutes / weeks&ndash;months</td><td>search.list capped at 100 calls/day by default since June 2026</td></tr>
+      <tr><td>X</td><td>Pay-per-use credits, or free DSA researcher form (EU)</td><td>$0.005/post or free (DSA)</td><td>Instant / months</td><td>3M reads/month cap; DSA route improving under EC supervision</td></tr>
+      <tr><td>Reddit</td><td>Support ticket &rarr; Data API / Reddit for Researchers</td><td>Free</td><td>~1 week ticket</td><td><strong>New requests close 31 Oct 2026;</strong> API closes March 2027</td></tr>
+      <tr><td>Telegram</td><td>Self-service api_id/api_hash at <a href="https://my.telegram.org">my.telegram.org</a></td><td>Free</td><td>Minutes</td><td>Undocumented rate limits; ban risk; no AI training on data</td></tr>
+      <tr><td>Non-public data (any VLOP)</td><td><a href="dsa.html">DSA Art. 40(4)</a> via EC Data Access Portal + BIPT</td><td>Free</td><td>Up to 80 working days+</td><td>New procedure, little precedent; heavy dossier</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="note">Keeping current: platform programs change monthly. Reliable trackers are the <a href="https://dsa-observatory.eu">DSA Observatory</a>, the <a href="https://www.weizenbaum-institut.de">Weizenbaum Institute</a> data-access papers, the <a href="https://www.dsa40collaboratory.eu">DSA40 Data Access Collaboratory</a>, and each platform's developer changelog.</p>
+</section>
+
+</main>
+<footer>
+  <div class="wrap">
+    <span><strong>Methlab — Vrije Universiteit Brussel</strong></span>
+    <span>Version 1.1 · October 2026</span>
+    <span>Fact-checked against live official sources, October 2026</span>
+    <span>Access programs change monthly — always verify on the linked application pages.</span>
+  </div>
+</footer>
+</body>
+</html>
