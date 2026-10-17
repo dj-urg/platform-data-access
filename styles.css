@@ -135,6 +135,22 @@ nav.sitenav a[aria-current="page"] { color: var(--accent); font-weight: 600; }
 
 /* ---------- hero ---------- */
 .hero { padding: clamp(3rem, 8vw, 6rem) 0 2.5rem; position: relative; }
+.hero-grid { display: grid; gap: 2.2rem; align-items: center; }
+@media (min-width: 920px) {
+  .hero-grid { grid-template-columns: minmax(0, 1fr) minmax(280px, 400px); gap: 3rem; }
+  .hero-grid h1 { font-size: clamp(2.2rem, 3.4vw, 3.2rem); }
+  .hero-grid .lede { font-size: 1.12rem; }
+}
+.videocard {
+  background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+  padding: 0.55rem 0.55rem 0.8rem; box-shadow: var(--shadow);
+}
+.videocard video { width: 100%; display: block; border-radius: 9px; background: var(--paper); }
+.videocard .vidcap {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--muted); margin: 0.7rem 0.3rem 0; line-height: 1.5;
+}
 .hero .rule {
   height: 4px; width: 72px; background: var(--accent);
   margin: 1.6rem 0 1.4rem; border: 0;
