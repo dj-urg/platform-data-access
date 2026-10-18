@@ -71,7 +71,7 @@
   </ol>
   <div class="callout">
     <h3>Quota — note the 2026 restructuring</h3>
-    <p>Since 1 June 2026, <code>search.list</code> and <code>videos.insert</code> each have their own separate bucket of 100 calls/day; the default 10,000 units/day covers all other endpoints. Most list reads (videos, channels, playlists, comments) cost 1 unit; every page of results costs again. Many older tutorials still describe search costing 100 units from the main pool — that is obsolete.</p>
+    <p>Since 1 June 2026, <code>search.list</code> and <code>videos.insert</code> each have their own separate bucket of 100 calls/day; the default 10,000 units/day covers all other endpoints. Most list reads (videos, channels, playlists, comments) cost 1 unit; every page of results costs again. Many older tutorials still describe search costing 100 units from the main pool — that is obsolete. Since 3 June 2026 there is also a <code>videos.batchGetStats</code> method (1 unit per call, its own 10,000/day bucket), useful for collecting statistics at scale.</p>
   </div>
 
   <h2 id="program">The YouTube Researcher Program (more quota)</h2>
@@ -79,7 +79,7 @@
     <li>Check eligibility at <a href="https://research.youtube.com/how-it-works" target="_blank" rel="noopener">research.youtube.com/how-it-works</a>: affiliated with an accredited not-for-profit degree-granting institution; a clear research goal; findings published and publicly available; no Google/Alphabet affiliation. No topic restrictions.</li>
     <li>Create your Cloud project and enable the Data API first — the application asks for the project ID.</li>
     <li>Apply with your institutional email (@vub.be) at the <a href="https://support.google.com/youtube/contact/yt_researcher_certification" target="_blank" rel="noopener">researcher certification form</a>, describing the project in as much detail as possible.</li>
-    <li>Accept the program terms if approved. Note: once published, YouTube gets free access to and use of the research, and findings must be made publicly available. The granted quota is &ldquo;as much as the research requires&rdquo; (no published figure).</li>
+    <li>Accept the program terms if approved. Note: once published, YouTube gets free access to and use of the research, and findings must be made publicly available; the terms also require sending YouTube a courtesy copy at least 7 days before publication and refreshing program data every 30 days until it is fixed for analysis. The granted quota is &ldquo;as much as the research requires&rdquo; (no published figure).</li>
   </ol>
 
   <h2 id="dsa-route">The EU/DSA route: Google Researcher Program</h2>
