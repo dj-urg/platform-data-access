@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Wider Platform Landscape — Bluesky, Wikimedia, Snapchat &amp; more</title>
-<meta name="description" content="Bluesky and Wikimedia are fully open; Snapchat has a documented DSA researcher route; Mastodon, Pinterest, LinkedIn, Bing, Twitch and Discord in brief.">
+<title>More Platforms — Platform Data Access</title>
+<meta name="description" content="Everything beyond the big six: Bluesky, Wikimedia, Snapchat and the wider landscape — plus alt-tech platforms, AI assistants, news and open-web archives, and podcasts.">
 <link rel="canonical" href="https://dj-urg.github.io/platform-data-access/more.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Platform Data Access">
-<meta property="og:title" content="The Wider Platform Landscape — Bluesky, Wikimedia, Snapchat &amp; more">
-<meta property="og:description" content="Bluesky and Wikimedia are fully open; Snapchat has a documented DSA researcher route; Mastodon, Pinterest, LinkedIn, Bing, Twitch and Discord in brief.">
+<meta property="og:title" content="More Platforms — Platform Data Access">
+<meta property="og:description" content="Everything beyond the big six: Bluesky, Wikimedia, Snapchat and the wider landscape — plus alt-tech platforms, AI assistants, news and open-web archives, and podcasts.">
 <meta property="og:url" content="https://dj-urg.github.io/platform-data-access/more.html">
 <meta property="og:image" content="https://dj-urg.github.io/platform-data-access/og-card.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -34,7 +34,6 @@
         <a href="reddit.html">Reddit</a>
         <a href="telegram.html">Telegram</a>
         <a href="more.html" aria-current="page">More Platforms</a>
-        <a href="alttech.html">Alt-Tech</a>
         <a href="toolkit.html">Toolkit</a>
         <a href="ethics.html">Ethics</a>
         <a href="references.html">References</a>
@@ -46,48 +45,88 @@
   <article>
     <section class="chapterhead">
       <span class="bignum" aria-hidden="true">09</span>
-      <p class="kicker fade-in">Chapter 9 · The wider landscape</p>
+      <p class="kicker fade-in">Chapter 9 · More platforms</p>
       <h1 class="fade-in d1">More platforms</h1>
-      <p class="lede fade-in d2">The big six aren't the whole field: the networks that are open by design, a VLOP with a documented researcher route, and the rest of the field in brief.</p>
+      <p class="lede fade-in d2">The big six aren't the whole field. Part I: the networks that are open by design, a VLOP with a documented researcher route, and the rest of the landscape in brief. Part II: alt-tech &amp; beyond — what's tolerated where nothing is official.</p>
     </section>
 
 <section class="prose">
-  <h2 id="bluesky">Bluesky — open by design</h2>
+  <h2 id="landscape">Part I · The wider landscape</h2>
+  <h3 id="bluesky">Bluesky — open by design</h3>
   <p>Everything on Bluesky is public by design: there are no private accounts, and the network's entire activity is available without application, approval or fees. Three doors exist. The <strong>full firehose</strong> — the AT Protocol relay stream (<code>com.atproto.sync.subscribeRepos</code>) — carries every public event on the network. <strong>Jetstream</strong> serves the same stream as friendlier, filtered JSON (by collection or account). And a normal <strong>HTTP API</strong> returns public profiles, posts, threads, likes and follows with no authentication at all. Since August 2026 the infrastructure is documented at <a href="https://bsky.network" target="_blank" rel="noopener">bsky.network</a> (&ldquo;Bluesky Protocol Services&rdquo;), with the endpoint reference at <a href="https://endpoints.bsky.app" target="_blank" rel="noopener">endpoints.bsky.app</a>.</p>
-  <p>For historical data, Jetstream v2's Network Replay (added August 2026) replays the full network archive before handing over to the live stream. It is the one metered element in the pipeline: replay requires a free API key created from your Bluesky account and is metered by download volume, while the live tail stays open and keyless — and everything is open source and self-hostable. In practice, the <a href="https://atproto.blue" target="_blank" rel="noopener">atproto Python SDK</a> is the standard library, and <a href="toolkit.html">4CAT</a> collects from Bluesky natively. Bluesky reported roughly 46 million registered accounts by mid-2026; active use is considerably lower, so mind the registered-versus-active distinction when sampling.</p>
+  <p>For historical data, Jetstream v2's Network Replay (added August 2026) replays the full network archive before handing over to the live stream. It is the one metered element in the pipeline: replay requires a free API key created from your Bluesky account and is billed by download volume, while the live tail stays open and keyless — and everything is open source and self-hostable. In practice, the <a href="https://atproto.blue" target="_blank" rel="noopener">atproto Python SDK</a> is the standard library, and <a href="toolkit.html">4CAT</a> collects from Bluesky natively. Bluesky reported roughly 46 million registered accounts by mid-2026; active use is considerably lower, so mind the registered-versus-active distinction when sampling.</p>
   <div class="callout">
-    <h3>Public by design &ne; consent to be studied</h3>
+    <h4>Public by design &ne; consent to be studied</h4>
     <p>Bluesky is not a designated VLOP, so no DSA route exists — none is needed. But openness cuts both ways: a one-million-post dataset published on Hugging Face in November 2024 was withdrawn within days after user backlash (<a href="https://www.404media.co/bluesky-posts-machine-learning-ai-datasets-hugging-face/" target="_blank" rel="noopener">404 Media</a>). Pseudonymise, honour deletions, and see <a href="references.html#failla">Failla &amp; Rossetti (2024)</a> for a careful template.</p>
   </div>
 
-  <h2 id="wikimedia">Wikipedia and Wikimedia</h2>
-  <p>Rarely included in platform guides, yet heavily used across the social sciences (edit histories, talk pages, pageviews around events) — and everything is open. The <a href="https://www.mediawiki.org/wiki/Wikimedia_APIs" target="_blank" rel="noopener">Wikimedia APIs</a> (the Action API, the REST APIs, the Analytics/pageviews API and the EventStreams live firehose at <a href="https://stream.wikimedia.org" target="_blank" rel="noopener">stream.wikimedia.org</a>) need no key for basic use. A descriptive User-Agent header with contact details is required, and OAuth 2.0 authentication raises the per-minute rate limits introduced in 2026 (roughly 10 requests/minute for anonymous traffic, 200/minute for identified clients — the limits are marked experimental, so check the live policy).</p>
+  <h3 id="wikimedia">Wikipedia and Wikimedia</h3>
+  <p>Rarely included in platform guides, yet heavily used across the social sciences (edit histories, talk pages, pageviews around events) — and everything is open. The <a href="https://www.mediawiki.org/wiki/Wikimedia_APIs" target="_blank" rel="noopener">Wikimedia APIs</a> (the Action API, the REST APIs, the Analytics/pageviews API and the EventStreams live firehose at <a href="https://stream.wikimedia.org" target="_blank" rel="noopener">stream.wikimedia.org</a>) need no key for basic use. A descriptive User-Agent header with contact details is required — and it pays: under the rate limits introduced in 2026, identified clients (a compliant User-Agent, or authenticated requests) get roughly 200 requests/minute against 10/minute for anonymous traffic (the limits are marked experimental, so check the live policy).</p>
   <p>Complete public <a href="https://dumps.wikimedia.org" target="_blank" rel="noopener">database dumps</a> are free (note: the classic XML dumps are being sunset in January 2027 in favour of the new MediaWiki Content File Exports), and <a href="https://enterprise.wikimedia.com" target="_blank" rel="noopener">Wikimedia Enterprise</a> offers a free tier anyone can register for: a Snapshot API with monthly updates and an on-demand allowance of 50,000 requests/month (the realtime API is paid). Wikipedia is itself a designated VLOP, so DSA Art. 40 applies — though the open infrastructure already exceeds it in practice. The Foundation's research portal is <a href="https://research.wikimedia.org" target="_blank" rel="noopener">research.wikimedia.org</a>.</p>
 
-  <h2 id="snapchat">Snapchat</h2>
+  <h3 id="snapchat">Snapchat</h3>
   <p>Snapchat is a designated VLOP with documented researcher-access instructions — relevant for youth and visual-culture research. Under Art. 40(12), email <strong>DSA-Researcher-Access@snapchat.com</strong> with your institution, the data and timeframe requested, purpose, methodology, funding sources and confirmation of non-commercial use (<a href="https://values.snap.com/privacy/transparency/researcher-access" target="_blank" rel="noopener">instructions</a>). The data catalogue covers Spotlight content and comments, public Story and Map Story content, and public profile data. There is no API: approved requests are fulfilled manually, as a PDF or a protected cloud-storage link. For non-public data, apply through the <a href="dsa.html">EC Data Access Portal</a>; Snap's DSC is the Dutch regulator. No successful fulfilments have been publicly documented yet — plan accordingly.</p>
 
-  <h2 id="brief">In brief: the rest of the field</h2>
+  <h3 id="brief">In brief: the rest of the field</h3>
   <ul>
     <li><strong>Mastodon / the Fediverse.</strong> Each instance exposes the open <a href="https://docs.joinmastodon.org/api/" target="_blank" rel="noopener">Mastodon API</a> (public timelines are usually readable without a token, though instances can switch this off; the default limit is 300 requests per 5 minutes). There is no gatekeeper — but research norms are stricter than the openness suggests: instance rules differ, several communities explicitly object to scraping, and a 2020 Mastodon dataset was withdrawn after a community open letter. Ask instances where feasible, and never republish identifiable content.</li>
     <li><strong>Pinterest.</strong> VLOP. A <a href="https://help.pinterest.com/en/landing/researchers-intake-form" target="_blank" rel="noopener">Researchers Intake Form</a> handles Art. 40(12) requests for public data (no API; terms shared after approval; no published outcomes yet). <a href="toolkit.html#zeeschuimer">Zeeschuimer</a> captures Pinterest while you browse.</li>
     <li><strong>LinkedIn.</strong> VLOP. A beta <a href="https://www.linkedin.com/help/linkedin/answer/a1645616" target="_blank" rel="noopener">Researcher Access Program</a> exists but currently accepts mainly ads-related requests — there is no general public research API. The public <a href="https://www.linkedin.com/ad-library/" target="_blank" rel="noopener">Ad Library</a> needs no application.</li>
     <li><strong>Bing.</strong> VLOSE. Microsoft's <a href="https://support.microsoft.com/en-us/bing/dsa-qualified-researcher-program" target="_blank" rel="noopener">DSA Qualified Researcher Program</a> provides anonymised search-query datasets, applied for through the EC Data Access Portal.</li>
-    <li><strong>Google beyond YouTube.</strong> Search (including Trends), Maps, Play and Shopping are covered by the <a href="youtube.html#dsa-route">Google Researcher Program</a>.</li>
-    <li><strong>Twitch.</strong> Not a VLOP; no researcher programme. The self-service <a href="https://dev.twitch.tv/docs/" target="_blank" rel="noopener">Helix API</a> covers stream metadata, VOD metadata and clips; live chat is captured via EventSub/IRC, but there is no official historical-chat endpoint. A 2024 <a href="https://democrats-science.house.gov/letters-to-nine-social-media-companies-requesting-access-for-mis-and-disinformation-researchers" target="_blank" rel="noopener">US congressional letter</a> urged Twitch (and eight other companies) to open researcher access voluntarily.</li>
+    <li><strong>Google beyond YouTube.</strong> Search, Maps, Play and Shopping are covered by the <a href="youtube.html#dsa-route">Google Researcher Program</a>; Google Trends has a separate API application.</li>
+    <li><strong>Twitch.</strong> Not a VLOP; no researcher program. The self-service <a href="https://dev.twitch.tv/docs/" target="_blank" rel="noopener">Helix API</a> covers stream metadata, VOD metadata and clips; live chat is captured via EventSub/IRC, but there is no official historical-chat endpoint. A 2024 <a href="https://democrats-science.house.gov/letters-to-nine-social-media-companies-requesting-access-for-mis-and-disinformation-researchers" target="_blank" rel="noopener">US congressional letter</a> urged Twitch (and eight other companies) to open researcher access voluntarily.</li>
     <li><strong>Discord.</strong> No research access at all: no public-content API, and bots only work inside servers they are invited to. The same 2024 congressional letter batch went to Discord, and a 2025 academic scrape of two billion messages from public servers drew sharp privacy criticism — treat Discord research as human-subjects territory.</li>
   </ul>
+
+  <h2 id="alttech">Part II · Alt-tech &amp; beyond</h2>
+  <p>The platforms with no research doors at all — and the sources people look for that aren't platforms. What exists, what is tolerated, and what to use instead.</p>
+
+  <h3 id="alttech-platforms">Alt-tech platforms: no research doors</h3>
+  <p>None of these services is a designated VLOP, so no DSA route exists, and none runs a research program. What follows is the tolerated-access map. See also the <a href="toolkit.html#scraping">web-scraping paragraph</a> and the <a href="ethics.html">ethics checklist</a> — extremist-adjacent platforms raise researcher-safety and GDPR issues on top of the usual ones.</p>
+  <ul>
+    <li><strong>4chan</strong> — the exception: an official, open, read-only <a href="https://github.com/4chan/4chan-API" target="_blank" rel="noopener">JSON API</a> (no key; max 1 request/second), and <a href="toolkit.html">4CAT</a> collects 4chan natively.</li>
+    <li><strong>Gab</strong> — a Mastodon fork whose API is effectively closed (public endpoints are largely Cloudflare-blocked; remnant endpoints answer inconsistently). <a href="toolkit.html#zeeschuimer">Zeeschuimer</a> captures Gab while you browse.</li>
+    <li><strong>Truth Social</strong> — a Mastodon fork with no official API; researchers use account-based collection (<a href="https://github.com/stanfordio/truthbrush" target="_blank" rel="noopener">Truthbrush</a>, now maintained as a community fork) or Zeeschuimer, and a public dataset exists (<a href="references.html#gerard">Gerard et al., 2023</a>).</li>
+    <li><strong>Rumble</strong> — only a creator-facing Live Stream API for your own channel; no research access. Community scrapers and commercial vendors fill the gap.</li>
+    <li><strong>BitChute</strong> — no official API; published studies run custom scrapers (e.g., the bitchute-scraper Python package).</li>
+    <li><strong>Odysee</strong> — still operating after LBRY's 2023 shutdown (acquired by Forward Research in 2024); its backend JSON-RPC API answers without authentication but is undocumented and offers no stability guarantees.</li>
+    <li><strong>Kick</strong> — launched its first official <a href="https://docs.kick.com" target="_blank" rel="noopener">developer API</a> in early 2025 (OAuth; channels, livestreams, chat events via webhooks). Early-phase, no research tier; the WebSocket chat feed most third-party tools read remains unofficial.</li>
+  </ul>
+
+  <h3 id="ai">AI assistants (ChatGPT, Gemini, Claude, Copilot)</h3>
+  <p>No API returns what users actually see in ChatGPT, Gemini, Claude or Copilot: the developer APIs serve the models, not the consumer apps. Questions about what assistants tell users are therefore squarely <strong><a href="toolkit.html#donation">data-donation territory</a></strong>: recruit participants, have them export their chat history — a GDPR right, and ChatGPT and most rivals ship an export button — and donate a filtered subset.</p>
+  <div class="callout">
+    <h4>Watch this space</h4>
+    <p>ChatGPT was designated a VLOSE on 31 August 2026 — the first AI assistant under the DSA — so Art. 40 researcher-access obligations begin applying around the end of 2026. Watch the Commission's designated list and the <a href="dsa.html">Data Access Portal</a>.</p>
+  </div>
+
+  <h3 id="openweb">News and the open web</h3>
+  <ul>
+    <li><strong>GDELT</strong> (<a href="https://blog.gdeltproject.org" target="_blank" rel="noopener">blog.gdeltproject.org</a>) — free global news monitoring: an events database back to 1979 updated every 15 minutes, the Global Knowledge Graph, a free DOC 2.0 API (about 1 request per 5 seconds) and full datasets on BigQuery. No registration.</li>
+    <li><strong>Media Cloud</strong> (<a href="https://www.mediacloud.org" target="_blank" rel="noopener">mediacloud.org</a>) — open media-ecosystem research platform run by a UMass Amherst/Northeastern consortium: a 1-billion-story news archive, free account plus API key, and a maintained Python client.</li>
+    <li><strong>Common Crawl</strong> (<a href="https://commoncrawl.org" target="_blank" rel="noopener">commoncrawl.org</a>) — free web crawls released roughly monthly since 2007; anonymous HTTPS download plus a URL index.</li>
+    <li><strong>Internet Archive / Wayback Machine</strong> (<a href="https://web.archive.org" target="_blank" rel="noopener">web.archive.org</a>) — the CDX API (the Wayback Machine's capture-listing API) lists captures per URL without a key; expect intermittent availability and build in retries.</li>
+  </ul>
+
+  <h3 id="podcasts">Podcasts</h3>
+  <p>The open door is <a href="https://podcastindex.org" target="_blank" rel="noopener">Podcast Index</a> — a free-key API over the open RSS podcast ecosystem whose core index &ldquo;will always be available for free, for any use&rdquo;. Spotify is the opposite story: in November 2024 it closed many Web API endpoints to new apps, and in February&ndash;March 2026 it restricted development mode much further (Premium account required, five authorised users per app, result limits and fields stripped). A minimal show/episode API technically remains, but Spotify is effectively unusable for research-scale podcast collection — build on Podcast Index and RSS instead.</p>
 </section>
 
-    <div class="pager"><a href="telegram.html">&larr; Telegram</a><a href="alttech.html">Alt-Tech & Beyond &rarr;</a></div>
+    <div class="pager"><a href="telegram.html">&larr; Telegram</a><a href="toolkit.html">Toolkit &rarr;</a></div>
   </article>
   <aside class="sidetoc" aria-label="On this page">
     <p class="toct">On this page</p>
     <ol>
-      <li><a href="#bluesky">Bluesky</a></li>
-      <li><a href="#wikimedia">Wikipedia & Wikimedia</a></li>
-      <li><a href="#snapchat">Snapchat</a></li>
-      <li><a href="#brief">In brief: the rest</a></li>
+      <li><a href="#landscape">Part I · The wider landscape</a></li>
+      <li class="sub"><a href="#bluesky">Bluesky</a></li>
+      <li class="sub"><a href="#wikimedia">Wikipedia &amp; Wikimedia</a></li>
+      <li class="sub"><a href="#snapchat">Snapchat</a></li>
+      <li class="sub"><a href="#brief">In brief: the rest</a></li>
+      <li><a href="#alttech">Part II · Alt-tech &amp; beyond</a></li>
+      <li class="sub"><a href="#alttech-platforms">Alt-tech platforms</a></li>
+      <li class="sub"><a href="#ai">AI assistants</a></li>
+      <li class="sub"><a href="#openweb">News &amp; open web</a></li>
+      <li class="sub"><a href="#podcasts">Podcasts</a></li>
     </ol>
   </aside>
 </div>
