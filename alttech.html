@@ -3,107 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Alt-Tech &amp; Beyond — Platform Data Access</title>
-<meta name="description" content="4chan to Kick: alt-tech platforms with no research doors — plus AI assistants, news and open-web archives, and podcasts.">
-<link rel="canonical" href="https://dj-urg.github.io/platform-data-access/alttech.html">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Platform Data Access">
-<meta property="og:title" content="Alt-Tech &amp; Beyond — Platform Data Access">
-<meta property="og:description" content="4chan to Kick: alt-tech platforms with no research doors — plus AI assistants, news and open-web archives, and podcasts.">
-<meta property="og:url" content="https://dj-urg.github.io/platform-data-access/alttech.html">
-<meta property="og:image" content="https://dj-urg.github.io/platform-data-access/og-card.png">
-<meta name="twitter:card" content="summary_large_image">
+<title>Alt-tech &amp; beyond — Platform Data Access</title>
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://dj-urg.github.io/platform-data-access/more.html">
+<meta http-equiv="refresh" content="0; url=more.html#alttech">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&amp;family=IBM+Plex+Mono:wght@400;600&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<script>location.replace('more.html' + (location.hash || '#alttech'))</script>
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
-<header class="topbar">
-  <div class="wrap">
-    <a class="brand" href="index.html">Platform<span>·</span>Data<span>·</span>Access</a>
-    <nav class="sitenav" aria-label="Site">
-        <a href="index.html">Overview</a>
-        <a href="dsa.html">DSA Gateway</a>
-        <a href="meta.html">Meta</a>
-        <a href="tiktok.html">TikTok</a>
-        <a href="youtube.html">YouTube</a>
-        <a href="x.html">X</a>
-        <a href="reddit.html">Reddit</a>
-        <a href="telegram.html">Telegram</a>
-        <a href="more.html">More Platforms</a>
-        <a href="alttech.html" aria-current="page">Alt-Tech</a>
-        <a href="toolkit.html">Toolkit</a>
-        <a href="ethics.html">Ethics</a>
-        <a href="references.html">References</a>
-    </nav>
-  </div>
-</header>
-<main id="main">
-<div class="wrap pagegrid">
-  <article>
-    <section class="chapterhead">
-      <span class="bignum" aria-hidden="true">10</span>
-      <p class="kicker fade-in">Chapter 10 · Alt-tech &amp; beyond</p>
-      <h1 class="fade-in d1">Alt-tech &amp; beyond</h1>
-      <p class="lede fade-in d2">The platforms with no research doors at all — and the sources people look for that aren't platforms. What exists, what is tolerated, and what to use instead.</p>
-    </section>
-
-<section class="prose">
-  <h2 id="alttech">Alt-tech platforms: no research doors</h2>
-  <p>None of these services is a designated VLOP, so no DSA route exists, and none runs a research program. What follows is the tolerated-access map. See also the <a href="toolkit.html#scraping">web-scraping paragraph</a> and the <a href="ethics.html">ethics checklist</a> — extremist-adjacent platforms raise researcher-safety and GDPR issues on top of the usual ones.</p>
-  <ul>
-    <li><strong>4chan</strong> — the exception: an official, open, read-only <a href="https://github.com/4chan/4chan-API" target="_blank" rel="noopener">JSON API</a> (no key; max 1 request/second), and <a href="toolkit.html">4CAT</a> collects 4chan natively.</li>
-    <li><strong>Gab</strong> — a Mastodon fork whose API is effectively closed (public endpoints are largely Cloudflare-blocked; remnant endpoints answer inconsistently). <a href="toolkit.html#zeeschuimer">Zeeschuimer</a> captures Gab while you browse.</li>
-    <li><strong>Truth Social</strong> — a Mastodon fork with no official API; researchers use account-based collection (<a href="https://github.com/stanfordio/truthbrush" target="_blank" rel="noopener">Truthbrush</a>, now maintained as a community fork) or Zeeschuimer, and a public dataset exists (<a href="references.html#gerard">Gerard et al., 2023</a>).</li>
-    <li><strong>Rumble</strong> — only a creator-facing Live Stream API for your own channel; no research access. Community scrapers and commercial vendors fill the gap.</li>
-    <li><strong>BitChute</strong> — no official API; published studies run custom scrapers (e.g., the bitchute-scraper Python package).</li>
-    <li><strong>Odysee</strong> — still operating after LBRY's 2023 shutdown (acquired by Forward Research in 2024); its backend JSON-RPC API answers without authentication but is undocumented and offers no stability guarantees.</li>
-    <li><strong>Kick</strong> — launched its first official <a href="https://docs.kick.com" target="_blank" rel="noopener">developer API</a> in early 2025 (OAuth; channels, livestreams, chat events via webhooks). Early-phase, no research tier; the WebSocket chat feed most third-party tools read remains unofficial.</li>
-  </ul>
-
-  <h2 id="ai">AI assistants (ChatGPT, Gemini, Claude, Copilot)</h2>
-  <p>No API returns what users actually see in ChatGPT, Gemini, Claude or Copilot: the developer APIs serve the models, not the consumer apps. Questions about what assistants tell users are therefore squarely <strong><a href="toolkit.html#donation">data-donation territory</a></strong>: recruit participants, have them export their chat history — a GDPR right, and ChatGPT and most rivals ship an export button — and donate a filtered subset.</p>
-  <div class="callout">
-    <h3>Watch this space</h3>
-    <p>ChatGPT was designated a VLOSE on 31 August 2026 — the first AI assistant under the DSA — so Art. 40 researcher-access obligations begin applying around the end of 2026. Watch the Commission's designated list and the <a href="dsa.html">Data Access Portal</a>.</p>
-  </div>
-
-  <h2 id="openweb">News and the open web</h2>
-  <ul>
-    <li><strong>GDELT</strong> (<a href="https://blog.gdeltproject.org" target="_blank" rel="noopener">blog.gdeltproject.org</a>) — free global news monitoring: an events database back to 1979 updated every 15 minutes, the Global Knowledge Graph, a free DOC 2.0 API (about 1 request per 5 seconds) and full datasets on BigQuery. No registration.</li>
-    <li><strong>Media Cloud</strong> (<a href="https://www.mediacloud.org" target="_blank" rel="noopener">mediacloud.org</a>) — open media-ecosystem research platform run by a UMass Amherst/Northeastern consortium: a 1-billion-story news archive, free account plus API key, and a maintained Python client.</li>
-    <li><strong>Common Crawl</strong> (<a href="https://commoncrawl.org" target="_blank" rel="noopener">commoncrawl.org</a>) — free web crawls released roughly monthly since 2007; anonymous HTTPS download plus a URL index.</li>
-    <li><strong>Internet Archive / Wayback Machine</strong> (<a href="https://web.archive.org" target="_blank" rel="noopener">web.archive.org</a>) — the CDX API (the Wayback Machine's capture-listing API) lists captures per URL without a key; expect intermittent availability and build in retries.</li>
-  </ul>
-
-  <h2 id="podcasts">Podcasts</h2>
-  <p>The open door is <a href="https://podcastindex.org" target="_blank" rel="noopener">Podcast Index</a> — a free-key API over the open RSS podcast ecosystem whose core index &ldquo;will always be available for free, for any use&rdquo;. Spotify is the opposite story: in November 2024 it closed many Web API endpoints to new apps, and in February&ndash;March 2026 it restricted development mode much further (Premium account required, five authorised users per app, result limits and fields stripped). A minimal show/episode API technically remains, but Spotify is effectively unusable for research-scale podcast collection — build on Podcast Index and RSS instead.</p>
-</section>
-
-    <div class="pager"><a href="more.html">&larr; More Platforms</a><a href="toolkit.html">Toolkit &rarr;</a></div>
-  </article>
-  <aside class="sidetoc" aria-label="On this page">
-    <p class="toct">On this page</p>
-    <ol>
-      <li><a href="#alttech">Alt-tech platforms</a></li>
-      <li><a href="#ai">AI assistants</a></li>
-      <li><a href="#openweb">News & open web</a></li>
-      <li><a href="#podcasts">Podcasts</a></li>
-    </ol>
-  </aside>
-</div>
-</main>
-<footer>
-  <div class="wrap">
-    <span><strong>Methlab — Vrije Universiteit Brussel</strong></span>
-    <span>Version 1.2 · October 2026</span>
-    <span>Monitored with Claude — changes are checked and verified against official sources.</span>
-    <span>Always double-check the linked application pages before applying.</span>
-  </div>
-</footer>
-<script>document.querySelector('.sitenav [aria-current]')?.scrollIntoView({inline:'center',block:'nearest'});</script>
+<p>This chapter has moved into <a href="more.html#alttech">More platforms — Part II · Alt-tech &amp; beyond</a>. You are being redirected.</p>
 </body>
 </html>
