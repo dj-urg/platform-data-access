@@ -22,7 +22,7 @@ Plain HTML + CSS, no build step. Open `index.html` or serve the folder as-is
 - `meta.html`, `tiktok.html`, `youtube.html`, `x.html`, `reddit.html`, `telegram.html` — one chapter per platform
 - `more.html` — the wider landscape: Bluesky, Wikimedia, Snapchat + other VLOPs in brief
 - `alttech.html` — alt-tech platforms, AI assistants, news & open web, podcasts
-- `toolkit.html` — 4CAT, Zeeschuimer, data donation, web scraping
+- `toolkit.html` — Toolkits: Methlab's 4CAT instance (4cat.vub.be), Zeeschuimer and scraping, data donation (DDM planned)
 - `ethics.html` — ethics, GDPR and VUB practicalities
 - `references.html` — full reference list
 - `styles.css` — shared stylesheet (light editorial theme)
