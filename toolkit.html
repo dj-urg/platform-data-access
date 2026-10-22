@@ -51,19 +51,59 @@
     </section>
 
 <section class="prose">
+  <h2 id="overview">Three methods at a glance</h2>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>Method</th><th>How data is collected</th><th>Typical use</th><th>What you need</th><th>Consent and legal basis</th></tr></thead>
+    <tbody>
+      <tr><td><a href="#fourcat">4CAT</a></td><td>4CAT calls the platform&rsquo;s API and stores the results as a dataset</td><td>Public posts, channels and accounts on platforms with an open or keyed API</td><td>An account on 4cat.vub.be; for Telegram and X, your own API credentials</td><td>Platform terms and GDPR research provisions; see <a href="ethics.html">Ethics</a></td></tr>
+      <tr><td><a href="#zeeschuimer">Zeeschuimer</a></td><td>A Firefox extension records the data a website loads while you browse</td><td>Platforms without an API, or with a closed or limited one (Instagram, TikTok, X)</td><td>Firefox, the extension, and an account on the platform you browse</td><td>Counts as web scraping; see the <a href="#scraping">scraping paragraph</a></td></tr>
+      <tr><td><a href="#donation">Data donation</a></td><td>Participants download their own data export and share a filtered subset</td><td>Personal histories, feeds and exposure data that no API provides</td><td>A donation platform, a participant sample, and ethics approval</td><td>Participant consent, based on GDPR Articles 15 and 20</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section class="prose">
   <h2 id="fourcat">4CAT &mdash; the Methlab instance at 4cat.vub.be</h2>
   <p><a href="https://4cat.nl" target="_blank" rel="noopener">4CAT</a> (Digital Methods Initiative, University of Amsterdam; <a href="references.html#peeters">Peeters &amp; Hagen, 2022</a>) is an open-source, web-based tool for collecting and analysing social media data. Each collection and analysis step is recorded, so results can be traced and reproduced. The current release is v1.57 (September 2026).</p>
   <p><strong>Methlab runs a shared 4CAT instance at <a href="https://4cat.vub.be" target="_blank" rel="noopener">4cat.vub.be</a>.</strong> The instance connects to the following platform APIs, so data can be collected through the 4CAT interface without writing code.</p>
-  <ul>
-    <li><strong>Bluesky</strong> &mdash; via the open AT Protocol APIs; no application or key is required (<a href="more.html#bluesky">see More platforms</a>).</li>
-    <li><strong>Douban</strong> &mdash; a Chinese platform for reviews and discussion.</li>
-    <li><strong>Telegram</strong> &mdash; public channels and groups via Telegram&rsquo;s API; you provide your own api_id and api_hash, and 4CAT logs in with your account (<a href="telegram.html">see the Telegram chapter</a>).</li>
-    <li><strong>X</strong> &mdash; available on request, because collection goes through X&rsquo;s paid API v2 and requires a project key (<a href="x.html">see the X chapter</a>).</li>
-  </ul>
-  <p>4CAT also collects from 4chan and Tumblr, accepts lists of TikTok and YouTube URLs, and imports data captured with Zeeschuimer (see below) and other tools. For a separate installation, the <a href="https://github.com/digitalmethodsinitiative/4cat/wiki/Installing-4CAT" target="_blank" rel="noopener">installation guide</a> covers the Docker setup.</p>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>Platform</th><th>Collection method</th><th>What you need</th><th>More</th></tr></thead>
+    <tbody>
+      <tr><td>Bluesky</td><td>API connector (open AT Protocol)</td><td>Nothing; no application or key</td><td><a href="more.html#bluesky">More platforms</a></td></tr>
+      <tr><td>Douban</td><td>API connector</td><td>Nothing</td><td>Chinese platform for reviews and discussion</td></tr>
+      <tr><td>Telegram</td><td>API connector for public channels and groups</td><td>Your own api_id and api_hash; 4CAT logs in with your Telegram account</td><td><a href="telegram.html">Telegram chapter</a></td></tr>
+      <tr><td>X</td><td>API connector (X API v2), enabled on request</td><td>A paid X API project key</td><td><a href="x.html">X chapter</a></td></tr>
+      <tr><td>4chan, 8kun</td><td>API connector</td><td>Nothing</td><td><a href="more.html#alttech">More platforms</a></td></tr>
+      <tr><td>Tumblr</td><td>API connector</td><td>API keys configured by the instance administrator</td><td></td></tr>
+      <tr><td>TikTok</td><td>From a list of post URLs</td><td>URLs collected elsewhere, for example with Zeeschuimer</td><td><a href="tiktok.html">TikTok chapter</a></td></tr>
+      <tr><td>Zeeschuimer import</td><td>Upload from the browser extension</td><td>Firefox with Zeeschuimer installed</td><td><a href="#zeeschuimer">See below</a></td></tr>
+      <tr><td>File upload</td><td>CSV files or zip archives of media</td><td>Exports from other tools, e.g. YouTube Data Tools or Facepager</td><td><a href="youtube.html">YouTube chapter</a></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>Data collected with other tools can be uploaded as CSV files or media archives. For a separate installation, the <a href="https://github.com/digitalmethodsinitiative/4cat/wiki/Installing-4CAT" target="_blank" rel="noopener">installation guide</a> covers the Docker setup.</p>
 
   <h2 id="zeeschuimer">Zeeschuimer &mdash; recording data while browsing</h2>
-  <p>For platforms without an API connector in 4CAT, or where the API is closed or has a low quota, <a href="https://github.com/digitalmethodsinitiative/zeeschuimer" target="_blank" rel="noopener">Zeeschuimer</a> offers a second method of collection. It is a Firefox extension by the same developers (v1.14.3, September 2026) that records the data a platform&rsquo;s website loads while you browse. It covers 11 platforms including TikTok (posts + comments), Instagram, Threads, X and RedNote, and sends the recorded data to a 4CAT instance (including the Methlab one) or saves it as NDJSON or CSV files. It is commonly used where APIs are closed (Instagram) or limited (TikTok). Because the data is what a logged-in user saw, the collection also documents that user&rsquo;s perspective.</p>
+  <p>For platforms without an API connector in 4CAT, or where the API is closed or has a low quota, <a href="https://github.com/digitalmethodsinitiative/zeeschuimer" target="_blank" rel="noopener">Zeeschuimer</a> offers a second method of collection. It is a Firefox extension by the same developers (v1.14.3, September 2026) that records the data a platform&rsquo;s website loads while you browse. It currently supports 12 platforms (table below) and sends the recorded data to a 4CAT instance (including the Methlab one) or saves it as NDJSON or CSV files. It is commonly used where APIs are closed (Instagram) or limited (TikTok). Because the data is what a logged-in user saw, the collection also documents that user&rsquo;s perspective.</p>
+
+    <div class="tablewrap">
+  <table>
+    <thead><tr><th>Platform</th><th>What Zeeschuimer records</th><th>Platform</th><th>What Zeeschuimer records</th></tr></thead>
+    <tbody>
+      <tr><td>TikTok</td><td>Posts and comments</td><td>Douyin</td><td>Posts</td></tr>
+      <tr><td>Instagram</td><td>Posts and reels</td><td>Gab</td><td>Posts</td></tr>
+      <tr><td>Threads</td><td>Posts</td><td>Truth Social</td><td>Posts</td></tr>
+      <tr><td>X</td><td>Posts</td><td>Pinterest</td><td>Pins</td></tr>
+      <tr><td>9gag</td><td>Posts</td><td>RedNote (Xiaohongshu)</td><td>Posts and comments</td></tr>
+      <tr><td>Imgur</td><td>Posts</td><td>Weibo</td><td>Posts and comments</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>Platform support depends on each site&rsquo;s web interface, so a platform update can break capture until the extension is updated. The current list is kept in the <a href="https://github.com/digitalmethodsinitiative/zeeschuimer#readme" target="_blank" rel="noopener">Zeeschuimer README</a>.</p>
 
   <h3 id="scraping">Web scraping</h3>
   <p>Zeeschuimer is a form of web scraping, and the same rules apply to any scraper you write yourself. Scraping publicly accessible data for academic research is not prohibited by EU law as such, and the GDPR&rsquo;s research provisions accommodate it (purpose-compatibility presumption, Art. 89 safeguards) &mdash; provided you still meet GDPR&rsquo;s principles: a lawful basis, minimisation, security, and a DPIA where required. DSA Art. 40(12) strengthens the position against VLOPs, and the Commission&rsquo;s 2025 decision against X treated terms banning researcher scraping of public data as part of X&rsquo;s non-compliance. The residual tension is contractual: platform terms typically forbid automated collection, and breach risks account suspension or legal letters rather than criminal liability. Weigh public interest, minimisation and researcher safety with your ethics committee before scraping (<a href="references.html#brown">Brown et al., 2024</a>; <a href="references.html#mancosu">Mancosu &amp; Vegetti, 2020</a>).</p>
@@ -78,6 +118,7 @@
   <aside class="sidetoc" aria-label="On this page">
     <p class="toct">On this page</p>
     <ol>
+      <li><a href="#overview">Three methods at a glance</a></li>
       <li><a href="#fourcat">4CAT at 4cat.vub.be</a></li>
       <li><a href="#zeeschuimer">Zeeschuimer</a></li>
       <li><a href="#scraping">Web scraping</a></li>
